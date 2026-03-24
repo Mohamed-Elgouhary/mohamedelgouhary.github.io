@@ -6,28 +6,35 @@
   <title>Mohamed Elgouhary | Academic Website</title>
   <style>
     :root {
-      --bg: #f5f7fb;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
+      --bg: #eef2ff;
+      --bg-soft: #f8fafc;
+      --card: rgba(255,255,255,0.88);
+      --card-strong: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
       --accent: #0f766e;
-      --accent-dark: #115e59;
-      --border: #e5e7eb;
-      --maxw: 1050px;
+      --accent-2: #1d4ed8;
+      --accent-3: #7c3aed;
+      --border: rgba(148,163,184,0.22);
+      --shadow: 0 20px 60px rgba(15, 23, 42, 0.10);
+      --maxw: 1120px;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(59,130,246,0.12), transparent 32%),
+        radial-gradient(circle at top right, rgba(16,185,129,0.16), transparent 28%),
+        linear-gradient(180deg, #f8fbff 0%, #eef3f8 100%);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     a {
-      color: var(--accent);
+      color: var(--accent-2);
       text-decoration: none;
     }
     a:hover { text-decoration: underline; }
@@ -38,116 +45,255 @@
     }
 
     header {
-      background: linear-gradient(135deg, #0f172a, #134e4a);
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #081b3a 0%, #0b3f4b 55%, #115e59 100%);
       color: white;
-      padding: 56px 0 42px;
+      padding: 72px 0 48px;
+    }
+
+    header::before,
+    header::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(10px);
+      opacity: 0.25;
+    }
+
+    header::before {
+      width: 260px;
+      height: 260px;
+      top: -40px;
+      right: 8%;
+      background: #60a5fa;
+    }
+
+    header::after {
+      width: 220px;
+      height: 220px;
+      bottom: -80px;
+      left: 8%;
+      background: #34d399;
     }
 
     .hero {
+      position: relative;
+      z-index: 1;
       display: grid;
-      grid-template-columns: 1.4fr 0.8fr;
-      gap: 28px;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 30px;
       align-items: center;
     }
 
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 7px 12px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.08);
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
     .hero h1 {
-      margin: 0 0 8px;
-      font-size: 2.2rem;
+      margin: 0 0 10px;
+      font-size: 3rem;
+      line-height: 1.08;
     }
 
     .subtitle {
-      font-size: 1.05rem;
+      font-size: 1.15rem;
       color: #d1fae5;
-      margin-bottom: 16px;
-      font-weight: 600;
+      margin-bottom: 18px;
+      font-weight: 700;
     }
 
     .hero p {
       margin: 0 0 16px;
-      color: #e5e7eb;
+      color: #ecfeff;
+      font-size: 1.02rem;
+      max-width: 720px;
     }
 
-    .links {
+    .links,
+    .social-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
+      gap: 12px;
+      margin-top: 18px;
     }
 
     .btn {
-      display: inline-block;
-      padding: 10px 14px;
-      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 11px 16px;
+      border-radius: 14px;
       background: white;
       color: #0f172a;
-      font-weight: 700;
-      border: 1px solid rgba(255,255,255,0.2);
+      font-weight: 800;
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .btn:hover {
+      text-decoration: none;
+      transform: translateY(-2px);
+      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.16);
     }
 
     .btn.secondary {
-      background: transparent;
+      background: rgba(255,255,255,0.08);
       color: white;
-      border: 1px solid rgba(255,255,255,0.35);
+      border: 1px solid rgba(255,255,255,0.24);
+      box-shadow: none;
+    }
+
+    .btn.secondary:hover {
+      background: rgba(255,255,255,0.14);
+    }
+
+    .hero-card {
+      text-align: center;
+      background: rgba(255,255,255,0.92);
+      color: var(--text);
+      backdrop-filter: blur(8px);
+    }
+
+    .profile-photo {
+      width: 182px;
+      height: 182px;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 18px;
+      border: 4px solid #ffffff;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.16);
+      background: linear-gradient(135deg, #e2e8f0, #f8fafc);
+    }
+
+    .hero-card p {
+      text-align: left;
+      color: var(--muted);
+      margin: 10px 0;
+    }
+
+    .hero-card strong {
+      color: var(--text);
     }
 
     nav {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,0.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(148,163,184,0.18);
     }
 
     .nav-inner {
       display: flex;
       flex-wrap: wrap;
       gap: 18px;
-      padding: 14px 0;
-      font-size: 0.95rem;
-      font-weight: 600;
+      padding: 15px 0;
+      font-size: 0.96rem;
+      font-weight: 700;
+    }
+
+    .nav-inner a {
+      color: #0f766e;
     }
 
     section {
-      padding: 34px 0;
+      padding: 38px 0;
     }
 
     .section-title {
-      font-size: 1.6rem;
+      font-size: 1.85rem;
       margin: 0 0 18px;
       color: #0f172a;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      margin: -6px 0 18px;
     }
 
     .card {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 22px;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
     }
 
     .grid-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      gap: 22px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
 
     .item {
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(148,163,184,0.18);
     }
     .item:last-child { border-bottom: none; }
 
-    .item h3 {
+    .item h3,
+    .pub-title {
       margin: 0 0 6px;
-      font-size: 1.06rem;
+      font-size: 1.08rem;
       color: #0f172a;
     }
 
     .meta {
       color: var(--muted);
       font-size: 0.95rem;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .pub {
+      padding: 18px;
+      border: 1px solid rgba(148,163,184,0.18);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.70);
+      margin-bottom: 14px;
+    }
+
+    .pub:last-child {
+      margin-bottom: 0;
+    }
+
+    .pub-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .mini-link {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: 1px solid #dbeafe;
     }
 
     ul {
@@ -162,29 +308,49 @@
     }
 
     .pill {
-      background: #ecfeff;
+      background: linear-gradient(135deg, #ecfeff, #eef2ff);
       color: #155e75;
-      border: 1px solid #bae6fd;
-      padding: 8px 12px;
+      border: 1px solid #cbd5e1;
+      padding: 9px 13px;
       border-radius: 999px;
       font-size: 0.92rem;
-      font-weight: 600;
+      font-weight: 700;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
     }
 
     footer {
-      padding: 30px 0 50px;
+      padding: 28px 0 54px;
       color: var(--muted);
       font-size: 0.95rem;
       text-align: center;
     }
 
-    @media (max-width: 860px) {
-      .hero, .grid-2 {
+    @media (max-width: 980px) {
+      .hero, .grid-2, .grid-3, .contact-grid {
         grid-template-columns: 1fr;
       }
 
       .hero h1 {
-        font-size: 1.9rem;
+        font-size: 2.35rem;
+      }
+    }
+
+    @media (max-width: 620px) {
+      header {
+        padding-top: 54px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .btn {
+        width: 100%;
       }
     }
   </style>
@@ -193,6 +359,7 @@
   <header>
     <div class="container hero">
       <div>
+        <div class="eyebrow">Academic Website • Robotics • Autonomous Systems</div>
         <h1>Mohamed Elgouhary</h1>
         <div class="subtitle">Ph.D. Student • Robotics • Autonomous Driving • Reinforcement Learning</div>
         <p>
@@ -202,12 +369,20 @@
         </p>
         <div class="links">
           <a class="btn" href="mailto:mohamed.elgohary.ai@gmail.com">Email</a>
+          <a class="btn" href="Mohamed_Elgouhary_CV.pdf" target="_blank">Download CV</a>
           <a class="btn secondary" href="#publications">Publications</a>
           <a class="btn secondary" href="#projects">Projects</a>
           <a class="btn secondary" href="#contact">Contact</a>
         </div>
+        <div class="social-links">
+          <a class="btn secondary" href="https://scholar.google.com/citations?user=OQA2etgAAAAJ&hl=en" target="_blank">Google Scholar</a>
+          <a class="btn secondary" href="https://www.linkedin.com/in/elgouhary-ai/" target="_blank">LinkedIn</a>
+          <a class="btn secondary" href="https://github.com/Mohamed-Elgouhary" target="_blank">GitHub</a>
+          <a class="btn secondary" href="https://www.youtube.com/@Elgouhary-AI" target="_blank">YouTube</a>
+        </div>
       </div>
-      <div class="card">
+      <div class="card hero-card">
+        <img src="profile.jpg" alt="Mohamed Elgouhary" class="profile-photo">
         <h3 style="margin-top:0;">Quick Info</h3>
         <p><strong>Location:</strong> Morgantown, WV, USA</p>
         <p><strong>Affiliation:</strong> Lane Department of Computer Science and Electrical Engineering, West Virginia University</p>
@@ -278,6 +453,7 @@
 
     <section id="projects">
       <h2 class="section-title">Selected Projects</h2>
+      <p class="section-subtitle">Representative work in learning-enabled control, racing autonomy, and sim-to-real robotic systems.</p>
       <div class="grid-2">
         <div class="card">
           <h3>RL-Based Tuning of Pure Pursuit for Autonomous Racing</h3>
@@ -312,31 +488,38 @@
 
     <section id="publications">
       <h2 class="section-title">Publications</h2>
+      <p class="section-subtitle">Selected journal papers, workshop papers, and current manuscripts.</p>
       <div class="card">
-        <div class="item">
-          <h3>Learning to Tune Pure Pursuit in Autonomous Racing: Joint Lookahead and Steering-Gain Control With PPO</h3>
-          <div class="meta">IEEE Robotics and Automation Letters, 2026</div>
-          <p>First author. Published journal paper on learning-based tuning of Pure Pursuit for autonomous racing.</p>
+        <div class="pub">
+          <div class="pub-title">Learning to Tune Pure Pursuit in Autonomous Racing: Joint Lookahead and Steering-Gain Control With PPO</div>
+          <div class="meta">IEEE Robotics and Automation Letters, 2026 • First Author</div>
+          <p>Journal paper on reinforcement learning for adaptive Pure Pursuit in autonomous racing, targeting both performance and sim-to-real deployment.</p>
+          <div class="pub-links">
+            <a class="mini-link" href="https://scholar.google.com/citations?user=OQA2etgAAAAJ&hl=en" target="_blank">View on Scholar</a>
+          </div>
         </div>
-        <div class="item">
-          <h3>A proposed video super-resolution reconstruction strategy using wavelet multi-scale convolutional neural networks</h3>
-          <div class="meta">Journal of Optics, Springer, 2023</div>
-          <p>First author. Research on video super-resolution using wavelet multi-scale CNNs.</p>
+        <div class="pub">
+          <div class="pub-title">A proposed video super-resolution reconstruction strategy using wavelet multi-scale convolutional neural networks</div>
+          <div class="meta">Journal of Optics, Springer, 2023 • First Author</div>
+          <p>Research on video super-resolution using wavelet multi-scale convolutional neural networks for improved reconstruction quality.</p>
+          <div class="pub-links">
+            <a class="mini-link" href="https://scholar.google.com/citations?user=OQA2etgAAAAJ&hl=en" target="_blank">View on Scholar</a>
+          </div>
         </div>
-        <div class="item">
-          <h3>Dynamic Lookahead Distance via Reinforcement Learning-Based Pure Pursuit for Autonomous Racing</h3>
-          <div class="meta">Accepted at the Autoware Workshop, IEEE IV</div>
-          <p>First author workshop paper.</p>
+        <div class="pub">
+          <div class="pub-title">Dynamic Lookahead Distance via Reinforcement Learning-Based Pure Pursuit for Autonomous Racing</div>
+          <div class="meta">Accepted at the Autoware Workshop, IEEE IV • First Author</div>
+          <p>Workshop paper on learning a dynamic lookahead policy for Pure Pursuit in racing scenarios with sim-to-real relevance.</p>
         </div>
-        <div class="item">
-          <h3>Robust Global–Local Behavior Arbitration via Continuous Command Fusion Under LiDAR Errors</h3>
-          <div class="meta">Accepted at the Autoware Workshop, IEEE IV</div>
-          <p>First author workshop paper.</p>
+        <div class="pub">
+          <div class="pub-title">Robust Global–Local Behavior Arbitration via Continuous Command Fusion Under LiDAR Errors</div>
+          <div class="meta">Accepted at the Autoware Workshop, IEEE IV • First Author</div>
+          <p>Workshop paper on safe and robust arbitration between global tracking and local obstacle avoidance under LiDAR impairments.</p>
         </div>
-        <div class="item">
-          <h3>Safety-Gated Learned Arbitration for Global–Local Control in Repetitive Competitive Tasks</h3>
-          <div class="meta">Submitted / Under Review at IEEE RA-L</div>
-          <p>First author journal manuscript under review.</p>
+        <div class="pub">
+          <div class="pub-title">Safety-Gated Learned Arbitration for Global–Local Control in Repetitive Competitive Tasks</div>
+          <div class="meta">Submitted / Under Review at IEEE RA-L • First Author</div>
+          <p>Current manuscript on safety-aware learned arbitration for hybrid control in competitive autonomous navigation tasks.</p>
         </div>
       </div>
     </section>
@@ -364,6 +547,7 @@
 
     <section id="skills">
       <h2 class="section-title">Technical Skills</h2>
+      <p class="section-subtitle">Core tools and topics used across my research, development, and deployment workflows.</p>
       <div class="card pill-wrap">
         <span class="pill">ROS2</span>
         <span class="pill">Python</span>
@@ -406,14 +590,22 @@
 
     <section id="contact">
       <h2 class="section-title">Contact</h2>
-      <div class="card">
-        <p><strong>Mohamed Elgouhary</strong></p>
-        <p>Email: <a href="mailto:mohamed.elgohary.ai@gmail.com">mohamed.elgohary.ai@gmail.com</a></p>
-        <p>Academic Email: <a href="mailto:mae00018@mix.wvu.edu">mae00018@mix.wvu.edu</a></p>
-        <p>GitHub: <a href="https://github.com/Mohamed-Elgouhary" target="_blank">github.com/Mohamed-Elgouhary</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/elgouhary-ai/" target="_blank">Mohamed Elgouhary's LinkedIn </a></p>
-        <p>Google Scholar: <a href="https://scholar.google.com/citations?user=OQA2etgAAAAJ&hl=en">Mohamed Elgouhary's Google Scholar</a></p>
-        <p>YouTube: <a href="https://www.youtube.com/@Elgouhary-AI">Mohamed-Elgouhary's YouTube channel </a></p>
+      <div class="contact-grid">
+        <div class="card">
+          <p><strong>Mohamed Elgouhary</strong></p>
+          <p>Email: <a href="mailto:mohamed.elgohary.ai@gmail.com">mohamed.elgohary.ai@gmail.com</a></p>
+          <p>Academic Email: <a href="mailto:mae00018@mix.wvu.edu">mae00018@mix.wvu.edu</a></p>
+          <p>Location: Morgantown, WV, USA</p>
+          <p>Affiliation: Lane Department of Computer Science and Electrical Engineering, West Virginia University</p>
+        </div>
+        <div class="card">
+          <p><strong>Profiles</strong></p>
+          <p>Google Scholar: <a href="https://scholar.google.com/citations?user=OQA2etgAAAAJ&hl=en" target="_blank">scholar profile</a></p>
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/elgouhary-ai/" target="_blank">linkedin.com/in/elgouhary-ai</a></p>
+          <p>GitHub: <a href="https://github.com/Mohamed-Elgouhary" target="_blank">github.com/Mohamed-Elgouhary</a></p>
+          <p>YouTube: <a href="https://www.youtube.com/@Elgouhary-AI" target="_blank">youtube.com/@Elgouhary-AI</a></p>
+          <p>CV: <a href="Mohamed_Elgouhary_CV.pdf" target="_blank">Download PDF</a></p>
+        </div>
       </div>
     </section>
   </main>
