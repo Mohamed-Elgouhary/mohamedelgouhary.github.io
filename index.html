@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohamed Elgouhary | Academic Website</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #0f766e;
+      --accent-dark: #115e59;
+      --border: #e5e7eb;
+      --maxw: 1050px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(92%, var(--maxw));
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f172a, #134e4a);
+      color: white;
+      padding: 56px 0 42px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: 2.2rem;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: #d1fae5;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .hero p {
+      margin: 0 0 16px;
+      color: #e5e7eb;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: white;
+      color: #0f172a;
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: white;
+      border: 1px solid rgba(255,255,255,0.35);
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      padding: 14px 0;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    section {
+      padding: 34px 0;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin: 0 0 18px;
+      color: #0f172a;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .item {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .item:last-child { border-bottom: none; }
+
+    .item h3 {
+      margin: 0 0 6px;
+      font-size: 1.06rem;
+      color: #0f172a;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    ul {
+      margin: 10px 0 0 20px;
+      padding: 0;
+    }
+
+    .pill-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      background: #ecfeff;
+      color: #155e75;
+      border: 1px solid #bae6fd;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    footer {
+      padding: 30px 0 50px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      .hero, .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container hero">
+      <div>
+        <h1>Mohamed Elgouhary</h1>
+        <div class="subtitle">Ph.D. Student • Robotics • Autonomous Driving • Reinforcement Learning</div>
+        <p>
+          I am a Ph.D. student and Graduate Research Assistant at West Virginia University working on
+          autonomous driving, autonomous racing, LiDAR-based perception, learning-enabled control,
+          and sim-to-real robotic systems.
+        </p>
+        <div class="links">
+          <a class="btn" href="mailto:mohamed.elgohary.ai@gmail.com">Email</a>
+          <a class="btn secondary" href="#publications">Publications</a>
+          <a class="btn secondary" href="#projects">Projects</a>
+          <a class="btn secondary" href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0;">Quick Info</h3>
+        <p><strong>Location:</strong> Morgantown, WV, USA</p>
+        <p><strong>Affiliation:</strong> Lane Department of Computer Science and Electrical Engineering, West Virginia University</p>
+        <p><strong>Research:</strong> Safe autonomous systems, learning-enabled control, LiDAR perception, embodied AI</p>
+        <p><strong>Technical Outreach:</strong> Arabic-language AI educator on YouTube</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container nav-inner">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section id="about">
+      <h2 class="section-title">About</h2>
+      <div class="card">
+        <p>
+          My research focuses on autonomous driving and autonomous racing, with emphasis on real-time control,
+          robust perception, and reinforcement learning for safety-critical decision-making. I develop ROS2-based
+          autonomy stacks that combine global path tracking, local obstacle avoidance, LiDAR perception, and
+          safety mechanisms for real-world robotic systems.
+        </p>
+        <p>
+          My current interests include safe autonomous systems, sim-to-real transfer, learning-enabled control,
+          embodied AI, and foundation-model approaches for high-level robotic reasoning.
+        </p>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2 class="section-title">Research Experience</h2>
+      <div class="card">
+        <div class="item">
+          <h3>West Virginia University — Ph.D. Student & Graduate Research Assistant</h3>
+          <div class="meta">Morgantown, WV, USA • Aug. 2024 – Present</div>
+          <p>
+            Conducting research in autonomous driving and racing using ROS2, LiDAR-based perception,
+            reinforcement learning, and sim-to-real deployment on F1TENTH platforms.
+          </p>
+        </div>
+        <div class="item">
+          <h3>High Institute of Engineering and Technology — Teaching Assistant</h3>
+          <div class="meta">Egypt • Sept. 2013 – May 2024</div>
+          <p>
+            Supported teaching in mechatronics and engineering courses, supervised student projects,
+            and contributed to academic instruction in programming, mathematics, and systems topics.
+          </p>
+        </div>
+        <div class="item">
+          <h3>Jelecom for Technical Training Company — Software Engineer</h3>
+          <div class="meta">Cairo, Egypt • Sept. 2012 – Sept. 2013</div>
+          <p>
+            Worked in software engineering and technical training, supporting applied computing workflows.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Selected Projects</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>RL-Based Tuning of Pure Pursuit for Autonomous Racing</h3>
+          <p>
+            Developed a reinforcement learning framework to jointly tune lookahead distance and steering gain
+            in Pure Pursuit, with sim-to-real validation on F1TENTH platforms.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Safety-Gated Arbitration for Global–Local Control</h3>
+          <p>
+            Designed a learning-enabled arbitration framework that combines global raceline tracking with
+            local obstacle avoidance under safety constraints.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Sim-to-Real F1TENTH Deployment with LiDAR Perception</h3>
+          <p>
+            Built ROS2-based autonomous racing systems integrating LiDAR perception, Pure Pursuit,
+            Gap-Follow, safety bubbles, and speed limiting for physical F1TENTH vehicles.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Embodied AI and Foundation-Model Exploration</h3>
+          <p>
+            Exploring how LLMs, VLMs, and related foundation-model approaches can support high-level
+            reasoning and decision-making in safety-critical autonomous systems.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2 class="section-title">Publications</h2>
+      <div class="card">
+        <div class="item">
+          <h3>Learning to Tune Pure Pursuit in Autonomous Racing: Joint Lookahead and Steering-Gain Control With PPO</h3>
+          <div class="meta">IEEE Robotics and Automation Letters, 2026</div>
+          <p>First author. Published journal paper on learning-based tuning of Pure Pursuit for autonomous racing.</p>
+        </div>
+        <div class="item">
+          <h3>A proposed video super-resolution reconstruction strategy using wavelet multi-scale convolutional neural networks</h3>
+          <div class="meta">Journal of Optics, Springer, 2023</div>
+          <p>First author. Research on video super-resolution using wavelet multi-scale CNNs.</p>
+        </div>
+        <div class="item">
+          <h3>Dynamic Lookahead Distance via Reinforcement Learning-Based Pure Pursuit for Autonomous Racing</h3>
+          <div class="meta">Accepted at the Autoware Workshop, IEEE IV</div>
+          <p>First author workshop paper.</p>
+        </div>
+        <div class="item">
+          <h3>Robust Global–Local Behavior Arbitration via Continuous Command Fusion Under LiDAR Errors</h3>
+          <div class="meta">Accepted at the Autoware Workshop, IEEE IV</div>
+          <p>First author workshop paper.</p>
+        </div>
+        <div class="item">
+          <h3>Safety-Gated Learned Arbitration for Global–Local Control in Repetitive Competitive Tasks</h3>
+          <div class="meta">Submitted / Under Review at IEEE RA-L</div>
+          <p>First author journal manuscript under review.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+      <div class="card">
+        <div class="item">
+          <h3>West Virginia University</h3>
+          <div class="meta">Ph.D. in progress • Aug. 2024 – Present</div>
+          <p>Lane Department of Computer Science and Electrical Engineering.</p>
+        </div>
+        <div class="item">
+          <h3>Mansoura University</h3>
+          <div class="meta">M.Sc. in Electronics and Communications Engineering • Sept. 2017 – Feb. 2023</div>
+          <p>Thesis: Multi-Frame Super-Resolution using Wavelet Multi-Scale Convolutional Neural Networks.</p>
+        </div>
+        <div class="item">
+          <h3>Mansoura University</h3>
+          <div class="meta">B.Sc. in Electronics and Communications Engineering • Sept. 2007 – Jun. 2012</div>
+          <p>Graduation Project: Wireless Brain-Controlled Humanoid System.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="card pill-wrap">
+        <span class="pill">ROS2</span>
+        <span class="pill">Python</span>
+        <span class="pill">C/C++</span>
+        <span class="pill">LiDAR Perception</span>
+        <span class="pill">Pure Pursuit</span>
+        <span class="pill">Gap-Follow</span>
+        <span class="pill">Reinforcement Learning</span>
+        <span class="pill">PPO</span>
+        <span class="pill">F1TENTH Gym</span>
+        <span class="pill">Git/GitHub</span>
+        <span class="pill">Linux</span>
+        <span class="pill">Autonomous Racing</span>
+      </div>
+    </section>
+
+    <section id="teaching">
+      <h2 class="section-title">Teaching & Outreach</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Teaching Experience</h3>
+          <ul>
+            <li>Modelling and Simulation</li>
+            <li>Algebra and Differential Calculus</li>
+            <li>Analytical Geometry and Integral Calculus</li>
+            <li>Ordinary Differential Equations</li>
+            <li>Partial Differential Equations</li>
+            <li>Computer Programming</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Outreach</h3>
+          <p>
+            Arabic-language AI content creator on YouTube since 2020, producing educational content in
+            artificial intelligence, machine learning, mathematics, and programming.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="card">
+        <p><strong>Mohamed Elgouhary</strong></p>
+        <p>Email: <a href="mailto:mohamed.elgohary.ai@gmail.com">mohamed.elgohary.ai@gmail.com</a></p>
+        <p>Academic Email: <a href="mailto:mae00018@mix.wvu.edu">mae00018@mix.wvu.edu</a></p>
+        <p>GitHub: <a href="https://github.com/your-username" target="_blank">github.com/your-username</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/" target="_blank">Add your LinkedIn link</a></p>
+        <p>Google Scholar: <a href="#">Add your Google Scholar link</a></p>
+        <p>YouTube: <a href="#">Add your YouTube channel link</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Mohamed Elgouhary. Built for GitHub Pages.
+    </div>
+  </footer>
+</body>
+</html>
